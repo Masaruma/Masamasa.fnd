@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap');
+
+* {
+  font-family: 'Yuji Syuku', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 350;
+}
+
+body {
+  height: 100vh;
+  background: url("./image/background.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+#header {
+  color:white;
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+  border-bottom: 3px dotted rgb(103, 82, 4);
+
+}
+
+a {
+  color:#F00;
+  font-size: 1.2em;
+  }
+
+#content {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color:white;
+  position: relative;
+}
+
+.container {
+  /* border: 3px solid black; */
+  height: 300px;
+  width: 300px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transform: scale(1);
+  z-index: 0;
+}
+
+
+audio {
+  padding: 10px;  
+  top: 50px;
+  left: 0;
+  position: relative;
+}
+
+#text {
+  font-size: 1.5rem;
+  position: absolute;
+  z-index: 0;
+}
+
+.circle {
+  height: 100%;
+  width: 100%;
+  /* background-color: hsl(115, 51%, 13%); */
+  background: content-box radial-gradient(rgb(48, 69, 5), hsl(115, 51%, 13%));
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.outer-circle {
+  height: 344px;
+  width: 344px;
+  background: conic-gradient(
+    #c1f063 calc(360deg * (8 / 21)),
+    #5d930b calc(360deg * (8 / 21)),
+    #627923 360deg
+  );
+  position: absolute;
+  top: -22px;
+  left: -22px;
+  border-radius: 50%;
+  z-index: -2;
+  border: 2px solid  #2d4009;
+}
+
+.pointer-container {
+  width: 20px;
+  height: 170px;
+  /* background-color: yellow; */
+  position: absolute;
+  top: -20px;
+  left: 140px;
+  transform-origin: bottom center;
+  animation: rotate 21000ms linear forwards infinite;
+}
+
+.pointer {
+  width: 20px;
+  height: 20px;
+  background-color: rgb(208, 39, 39);
+  border-radius: 50%;
+  border: 1px solid  rgb(81, 2, 2);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+
+.container.grow {
+  animation: grow 8s linear forwards;
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+.container.shrink {
+  animation: shrink 13s linear forwards;
+}
+
+@keyframes shrink {
+  0% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
